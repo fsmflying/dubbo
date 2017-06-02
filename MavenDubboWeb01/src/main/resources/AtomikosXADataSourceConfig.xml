@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd       
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        ">
+        
+	<!-- 自动加载属性配置文件 -->
+	<context:property-placeholder location="classpath:jtajdbc.properties" />
+
+	<!-- mysql数据源 -->
+	<bean id="sysadminDataSource" class="com.atomikos.jdbc.AtomikosDataSourceBean"
+		init-method="init" destroy-method="close">
+		<description>sysadmin xa datasource</description>
+		<property name="uniqueResourceName" value="sysadminDataSource" />
+		<property name="xaDataSourceClassName">
+			<value>${sysadmin.xadriverClassName}</value>
+		</property>
+		<property name="xaProperties">
+			<props>
+				<prop key="user">${sysadmin.username}</prop>
+				<prop key="password">${sysadmin.password}</prop>
+				<prop key="URL">${sysadmin.url}</prop>
+			</props>
+		</property>
+		<property name="poolSize" value="10" />
+	</bean>
+
+	<bean id="logDataSource" class="com.atomikos.jdbc.AtomikosDataSourceBean"
+		init-method="init" destroy-method="close">
+		<description>log xa datasource</description>
+		<property name="uniqueResourceName" value="logDataSource" />
+		<property name="xaDataSourceClassName">
+			<value>${log.xadriverClassName}</value>
+		</property>
+		<property name="xaProperties">
+			<props>
+				<prop key="user">${log.username}</prop>
+				<prop key="password">${log.password}</prop>
+				<prop key="URL">${log.url}</prop>
+			</props>
+		</property>
+		<property name="poolSize" value="10" />
+	</bean>
+
+	<bean id="sequenceDataSource" class="com.atomikos.jdbc.AtomikosDataSourceBean"
+		init-method="init" destroy-method="close">
+		<description>sequence xa datasource</description>
+		<property name="uniqueResourceName" value="sequenceDataSource" />
+		<property name="xaDataSourceClassName">
+			<value>${sequence.xadriverClassName}</value>
+		</property>
+		<property name="xaProperties">
+			<props>
+				<prop key="user">${sequence.username}</prop>
+				<prop key="password">${sequence.password}</prop>
+				<prop key="URL">${sequence.url}</prop>
+			</props>
+		</property>
+		<property name="poolSize" value="10" />
+	</bean>
+
+
+	
+
+</beans>

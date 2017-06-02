@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd       
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        ">
+	
+	
+	<!-- dao================================================================================= -->
+	<bean id="systemManageDao" class="com.fsmflying.mybatis.dao.impl.SystemManageDaoImpl">
+		<property name="sessionFactory" ref="sysadminSessionFactory"/>
+	</bean>
+	<bean id="sequenceDao" class="com.fsmflying.mybatis.dao.impl.SequenceDaoImpl">
+		<property name="sessionFactory" ref="sequenceSessionFactory"/>
+	</bean>
+	<bean id="logDao" class="com.fsmflying.mybatis.dao.impl.LogDaoImpl">
+		<property name="sessionFactory" ref="logSessionFactory"/>
+	</bean>
+	
+	<!-- service================================================================================= -->
+	<bean id="systemManageService" class="com.fsmflying.sys.service.impl.SystemManageServiceImpl">
+		<property name="systemManageDao" ref="systemManageDao"/>
+	</bean>
+	<bean id="configService" class="com.fsmflying.sys.service.impl.DefaultConfigServiceImpl">
+		<property name="systemManageService" ref="systemManageService"/>
+	</bean>
+	<bean id="sequenceService" class="com.fsmflying.sys.service.impl.SequenceServiceImpl">
+		<property name="sequenceDao" ref="sequenceDao"/>
+	</bean>
+	<bean id="logService" class="com.fsmflying.sys.service.impl.LogServiceImpl">
+		<property name="logDao" ref="logDao"/>
+		<property name="isWriteDatabase" value="true"/>
+		<property name="appName" value="MavenCommonWeb06-Mybatis"/>
+	</bean>
+	
+	
+	
+</beans>

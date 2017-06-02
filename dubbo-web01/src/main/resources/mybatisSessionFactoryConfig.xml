@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd       
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        ">
+        
+	<!--  <import resource="classpath:dbcpDataSourceConfig.xml"/>
+	<import resource="classpath:springTxConfig.xml"/> -->
+	<import resource="classpath:AtomikosXADataSourceConfig.xml"/>
+	<import resource="classpath:springAtomikosTxConfig.xml"/>
+	
+	
+	<bean id="sysadminSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="sysadminDataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations"
+			value="classpath*:com/fsmflying/mybatis/mapper/xml/*.xml" />
+	</bean>
+	<bean id="sequenceSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="sequenceDataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations"
+			value="classpath*:com/fsmflying/mybatis/mapper/xml/*.xml" />
+	</bean>
+	<bean id="logSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="logDataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations"
+			value="classpath*:com/fsmflying/mybatis/mapper/xml/*.xml" />
+	</bean>
+	
+	
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sysadminSessionFactory" />
+		<!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+		<property name="basePackage" value="com.fsmflying.mybatis.mapper" />
+	</bean>
+	
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sequenceSessionFactory" />
+		<!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+		<property name="basePackage" value="com.fsmflying.mybatis.mapper" />
+	</bean>
+	
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="logSessionFactory" />
+		<!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+		<property name="basePackage" value="com.fsmflying.mybatis.mapper" />
+	</bean>
+	
+
+</beans>

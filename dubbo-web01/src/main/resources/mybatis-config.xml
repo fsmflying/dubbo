@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="jdbc.properties" />
+
+	<typeAliases>
+		<typeAlias type="com.fsmflying.sys.dm.SysRole" alias="SysRole" />
+		<typeAlias type="com.fsmflying.sys.dm.SysUser" alias="SysUser" />
+		<typeAlias type="com.fsmflying.sys.dm.SysCompany" alias="SysCompany" />
+		<typeAlias type="com.fsmflying.sys.dm.SysDepartment" alias="SysDepartment" />
+		<typeAlias type="com.fsmflying.sys.dm.SysEmployee" alias="SysEmployee" />
+		<typeAlias type="com.fsmflying.sys.dm.SysTab" alias="SysTab" />
+		<typeAlias type="com.fsmflying.sys.dm.SysMenu" alias="SysMenu" />
+		<typeAlias type="com.fsmflying.sys.dm.SysFuncPoint" alias="SysFuncPoint" />
+		<typeAlias type="com.fsmflying.sys.dm.SysDictDir" alias="SysDictDir" />
+		<typeAlias type="com.fsmflying.sys.dm.SysDictItem" alias="SysDictItem" />
+		<typeAlias type="com.fsmflying.sys.dm.SysConfig" alias="SysConfig" />
+		<typeAlias type="com.fsmflying.sys.dm.SysCustomPage" alias="SysCustomPage" />
+		<typeAlias type="com.fsmflying.sys.dm.SysDataAuth" alias="SysDataAuth" />
+		<typeAlias type="com.fsmflying.sys.dm.SysDataAuthItem"
+			alias="SysDataAuthItem" />
+		<typeAlias type="com.fsmflying.sys.dm.SysFile" alias="SysFile" />
+		
+		<typeAlias type="com.fsmflying.sys.dm.SysSequence" alias="SysSequence" />
+		
+		<typeAlias type="com.fsmflying.sys.dm.SysLog" alias="SysLog" />
+		
+		<typeAlias type="com.fsmflying.util.TwoIntegerTuple" alias="TwoIntegerTuple" />
+		<typeAlias type="com.fsmflying.util.ThreeIntegerTuple" alias="ThreeIntegerTuple" />
+		
+	</typeAliases>
+	<!-- 
+	<environments default="common_sysadmin">
+		<environment id="common_sysadmin">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${sysadmin.driverClassName}" />
+				<property name="url" value="${sysadmin.url}" />
+				<property name="username" value="${sysadmin.username}" />
+				<property name="password" value="${sysadmin.password}" />
+			</dataSource>
+		</environment>
+		<environment id="common_sequence">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${sequence.driver}" />
+				<property name="url" value="${sequence.url}" />
+				<property name="username" value="${sequence.username}" />
+				<property name="password" value="${sequence.password}" />
+			</dataSource>
+		</environment>
+		<environment id="common_log">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${log.driver}" />
+				<property name="url" value="${log.url}" />
+				<property name="username" value="${log.username}" />
+				<property name="password" value="${log.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	 -->
+	<databaseIdProvider type="DB_VENDOR">
+	  <property name="SQL Server" value="sqlserver"/>
+	  <property name="DB2" value="db2"/>        
+	  <property name="Oracle" value="oracle" />
+	</databaseIdProvider>
+	<mappers>
+		<!--  
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysTestMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysSequenceMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysCompanyMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysUserMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysRoleMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysEmployeeMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysDepartmentMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysDictDirMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysDictItemMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysConfigMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysCustomPageMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysTabMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysMenuMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysFuncPointMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysDataAuthMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysDataAuthItemMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysFileMapper.xml" />
+		<mapper resource="com/fsmflying/mybatis/mapper/xml/SysMapper.xml" />
+		-->
+		<!---->
+		
+		<!--  -->
+		
+		<!--<package name="com.fsmflying.mybatis.mapper"/> 
+		
+		<mapper class="com.fsmflying.mybatis.mapper.SysTestMapper" />-->
+		
+		<!--  
+		<mapper class="com.fsmflying.mybatis.mapper.SysUserMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysRoleMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysCompanyMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysEmployeeMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysDepartmentMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysDictDirMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysDictItemMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysConfigMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysCustomPageMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysTabMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysMenuMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysFuncPointMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysDataAuthMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysDataAuthItemMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysFileMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysLogMapper" />
+		<mapper class="com.fsmflying.mybatis.mapper.SysSequenceMapper" />
+		-->
+	</mappers>
+
+</configuration>
