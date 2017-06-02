@@ -45,12 +45,10 @@
 		<dependency>
 			<groupId>com.fsmflying</groupId>
 			<artifactId>fsmflying-spring</artifactId>
-
 		</dependency>
 		<dependency>
 			<groupId>com.fsmflying</groupId>
 			<artifactId>fsmflying-mybatis</artifactId>
-
 		</dependency>
 		<!--fsmflying End -->
 

@@ -7,6 +7,12 @@
         <dependent-module archiveName="fsmflying-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fsmflying/fsmflying">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="fsmflying-spring-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fsmflying-spring/fsmflying-spring">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fsmflying-mybatis-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fsmflying-mybatis/fsmflying-mybatis">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="dubbo-webservice-01"/>
         <property name="java-output-path" value="/dubbo-webservice-01/target/classes"/>
     </wb-module>
