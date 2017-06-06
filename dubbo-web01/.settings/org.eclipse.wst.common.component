@@ -4,6 +4,12 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="fsmflying-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fsmflying/fsmflying">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fsmflying-spring-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fsmflying-spring/fsmflying-spring">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="dubbo-web01"/>
         <property name="java-output-path" value="/dubbo-web01/target/classes"/>
     </wb-module>
