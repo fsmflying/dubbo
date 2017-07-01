@@ -1,1 +1,6 @@
 演示将项目springmvc+spring+mybatis改造成dubbo服务的架构
+MavenDubboWeb01即为改造前的项目
+dubbo-webproject-parent为改造后的所有项目的父项目
+dubbo-webservice-01为改造后的服务提供者,即dubbo服务提供者
+dubbo-web01为改造后的前端，即dubbo消费者
+dubbo-web02暂时无用处
